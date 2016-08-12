@@ -12,6 +12,6 @@ Pre-requisites:
 Reannotate from native store:    
 `cat uuids | ./reannotate-from-native.sh`
 
-Reannotate from source(binding-service)
+Reannotate from source(binding-service):   
 `cat uuids | ./reannotate-from-source.sh`
 
