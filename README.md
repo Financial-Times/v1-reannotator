@@ -15,3 +15,35 @@ Reannotate from native store:
 Reannotate from source(binding-service):   
 `cat uuids | ./reannotate-from-source.sh`
 
+# Expected Output
+```
+$ cat uuids.txt | ./reannotate-from-source.sh
+Processing 017623ac-7308-11e6-b60a-de4532d5ea35
+017623ac-7308-11e6-b60a-de4532d5ea35 found in source METHODE
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100  5059    0     0  100  5059      0  15470 --:--:-- --:--:-- --:--:-- 16214HTTP/1.1 100 Continue
+
+HTTP/1.1 200 OK
+Accept-Ranges: bytes
+Age: 0
+Content-Type: application/json; charset=utf-8
+Date: Mon, 05 Sep 2016 11:41:06 GMT
+Via: 1.1 varnish-v4
+X-Cache: MISS
+X-Request-Id: tid_bf6livimuy
+X-Varnish: 9269075
+Content-Length: 0
+Connection: keep-alive
+
+```
+
+# Notes
+
+If you are running on windows you might have an issue with line terminators. Therefore if you get only the following (you should get more output) when trying to reannotate from source then you probably have an issue:
+
+`$ cat uuids.txt | ./reannotate-from-source.sh
+Processing 017623ac-7308-11e6-b60a-de4532d5ea35`
+
+`dos2unix.exe *`
+
