@@ -13,7 +13,7 @@ while IFS= read -r line; do
     echo "Found $line in Native Store. Republishing..."
     echo -n $data | curl -i -d @- -X POST -H "Content-Type: application/json" -H"X-Origin-System-Id: binding-service" "https://$UPP_USER:$UPP_PASSWORD@$UPP_HOST/metadata"
   else
-    echo ">$line not found in Native Store"
+    echo ">$line not found in Native Store. Data: $data"
   fi
 done
 echo "Finished"
