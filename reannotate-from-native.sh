@@ -1,4 +1,10 @@
 #!/bin/bash
+
+if [ -z "$UPP_USER" ] || [ -z "$UPP_PASSWORD" ] || [ -z "$UPP_HOST" ]; then
+  echo "One of the required environment variables are not set up. Please correct"
+  exit 2
+fi
+
 echo "Started reannotate v1-metadata from Native Store"
 while IFS= read -r line; do
   echo "Processing $line"
