@@ -1,4 +1,10 @@
 #!/bin/bash
+if [ -z "$UPP_USER" ] || [ -z "$UPP_PASSWORD" ] || [ -z "$UPP_HOST" ] || [ -z "$uuidList" ] || [ -z "$QMI_USER" ] || [ -z "$QMI_PASSWORD" ]; then
+  echo "One of the required environment variables are not set up. Please correct"
+  exit 2
+fi
+
+
 echo "Started reannotate v1-metadata from Binding Service"
 sources=`cat sources`
 for uuid in ${uuidList}; do
